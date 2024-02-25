@@ -1,12 +1,16 @@
 .header {
   background-color: rgb(237, 230, 41);
+  display: flex;
+  margin-top: 5%;
 }
 .img_boy {
-  width: 50%;
+  width: 60%;
+  height: 100%;
 }
 .img_girl {
-  width: 30%;
+  width: 35%;
 }
-.header_img {
-  padding-left: 40%;
+.header_name {
+  padding-left: 80px;
+  padding-top: 20px;
 }
