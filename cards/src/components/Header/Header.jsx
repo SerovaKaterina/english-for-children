@@ -2,11 +2,11 @@ import React from "react";
 import styles from "./header.module.css";
 import imgBoy from "../../images/boy.png";
 import imgGirl from "../../images/girl.png";
-import imgVector from "../../images/Vector.png"
+import imgVector from "../../images/Vector.png";
+
+
 
 function Header() {
-    
-    
     return (
         <div className= {styles.header}>
             <img src={imgVector} alt="vector" />

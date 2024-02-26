@@ -1,16 +1,24 @@
 .header {
   background-color: rgb(237, 230, 41);
   display: flex;
-  margin-top: 5%;
 }
 .img_boy {
   width: 60%;
   height: 100%;
+  background-image: url(../../images/2.png);
+  background-repeat: inherit;
 }
 .img_girl {
-  width: 35%;
+  width: 40%;
+  background-image: url(../../images/1.png);
+  background-repeat: no-repeat;
 }
 .header_name {
-  padding-left: 80px;
   padding-top: 20px;
+  background-image: url(../../images/1.png);
+  background-repeat: no-repeat;
+  background-position-x: right;
+}
+body {
+  background-image: url(../../images/5.png);
 }
