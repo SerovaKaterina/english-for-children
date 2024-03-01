@@ -1,0 +1,9 @@
+.button_btn {
+  margin-left: 40%;
+  height: 50px;
+  margin-top: 20px;
+  background-color: rgb(227, 250, 19);
+  border: 2px solid rgb(241, 68, 210);
+  font-size: larger;
+  font-weight: bolder;
+}
