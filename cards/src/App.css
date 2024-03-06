@@ -2,3 +2,19 @@
   max-width: 800px;
   margin: 0 auto;
 }
+.transport-carousel {
+  display: flex;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.transport-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.transport-card {
+  flex: 0 0 auto;
+  margin-right: 10px;
+  width: 200px;
+}
