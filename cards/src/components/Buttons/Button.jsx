@@ -1,11 +1,16 @@
 import React, { useState } from "react";
 import styles from "./Button.module.css";
 
-const Button = () => {
+const Button = ({ onSelectCategory }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
+  };
+
+  const handleCategoryClick = (category) => {
+    onSelectCategory(category);
+    toggleDropdown();
   };
 
   return (
@@ -15,10 +20,30 @@ const Button = () => {
       </button>
       {isOpen && (
         <div className={styles.dropdown_content}>
-          <button className={styles.dropdown_btn}>Транспорт</button>
-          <button className={styles.dropdown_btn}>Одежда</button>
-          <button className={styles.dropdown_btn}>Игрушки</button>
-          <button className={styles.dropdown_btn}>Семья</button>
+          <button
+            className={styles.dropdown_btn}
+            onClick={() => handleCategoryClick("Транспорт")}
+          >
+            Транспорт
+          </button>
+          <button
+            className={styles.dropdown_btn}
+            onClick={() => handleCategoryClick("Одежда")}
+          >
+            Одежда
+          </button>
+          <button
+            className={styles.dropdown_btn}
+            onClick={() => handleCategoryClick("Игрушки")}
+          >
+            Игрушки
+          </button>
+          <button
+            className={styles.dropdown_btn}
+            onClick={() => handleCategoryClick("Семья")}
+          >
+            Семья
+          </button>
         </div>
       )}
     </div>

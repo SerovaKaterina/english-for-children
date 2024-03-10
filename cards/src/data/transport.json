@@ -1,42 +1,42 @@
 [
     {
         "id": 1,
-        "url": "../images/bus.jpg",
+        "url": "/assets/bus.jpg",
         "english" : "bus",
         "transcription": "[bʌs]",
         "russian": "Автобус"
     },
     {
         "id": 2,
-        "url": "./images/airplane.jpg",
+        "url": "/assets/airplane.jpg",
         "english" : "airplane",
         "transcription": "[ˈeəpleɪn]",
         "russian": "Самолёт"
     },
     {
         "id": 3,
-        "url": "./images/car.jpg",
+        "url": "/assets/car.jpg",
         "english" : "car",
         "transcription": "[kɑː]",
         "russian": "Машина"
     },
     {
         "id": 4,
-        "url": "./images/ambulance.jpg",
+        "url": "/assets/ambulance.jpg",
         "english" : "ambulance",
         "transcription": "[ˈæmbjʊləns]",
         "russian": "Машина скорой помощи"
     },
     {
         "id": 5,
-        "url": "./images/motorcycle.jpg",
+        "url": "/assets/motorcycle.jpg",
         "english" : "motorcycle",
         "transcription": "[ˈməʊtəsaɪk(ə)l]",
         "russian": "Мотоцикл"
     },
     {
         "id": 6,
-        "url": "./images/train.jpg",
+        "url": "/assets/train.jpg",
         "english" : "train",
         "transcription": "[treɪn]",
         "russian": "Поезд"
