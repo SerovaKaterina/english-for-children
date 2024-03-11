@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import Header from './components/Header/Header';
 import Button from './components/Buttons/Button';
-import TransportCard from './components/Carousel/TransportCard'; // Импорт компонента TransportCard
+import Carousel from './components/Carousel/Carousel';
 import styles from './App.module.css';
 import transportData from './data/transport.json'; // Импорт данных о транспорте
-
+import clothesData from './data/сlothes.json'; // Импорт данных о транспорте
 function App() {
   const [selectedCategory, setSelectedCategory] = useState(null);
 
@@ -17,21 +17,11 @@ function App() {
     <div className={styles.app} >
       <Header />
       <Button onSelectCategory={handleCategorySelect} /> {/* Передача функции обработки выбора категории */}
-      {selectedCategory === "Транспорт" && (
-        <div className={styles.transport}>
-          {transportData.map((transport) => (
-            <TransportCard 
-            key={transport.id}
-            url={transport.url}
-            english={transport.english}
-            transcription={transport.transcription}
-            russian={transport.russian}
-             />
-          ))}
-        </div>
-      )}
-    </div>
-  );
-}
+      {selectedCategory === "Транспорт" && <Carousel items={transportData} />}
+      {selectedCategory === "Одежда" && <Carousel items={clothesData} />}
 
+        </div>
+      );
+    }
+ 
 export default App;

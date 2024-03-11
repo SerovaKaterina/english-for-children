@@ -1,0 +1,17 @@
+/* Carousel.module.css */
+.carousel {
+  display: flex;
+  align-items: center;
+}
+
+.active {
+  display: block;
+}
+
+.inactive {
+  display: none;
+}
+
+button {
+  margin: 0 10px;
+}

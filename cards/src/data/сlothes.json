@@ -1,0 +1,44 @@
+[
+    {
+        "id": 7,
+        "url": "/assets/dress.jpg",
+        "english" : "dress",
+        "transcription": "[dres]",
+        "russian": "Платье"
+    },
+    {
+        "id": 8,
+        "url": "/assets/skirt.jpg",
+        "english" : "skirt",
+        "transcription": "[skɜːt]",
+        "russian": "Юбка"
+    },
+    {
+        "id": 9,
+        "url": "/assets/jacket.jpg",
+        "english" : "jacket",
+        "transcription": "[ˈʤækɪt]",
+        "russian": "Куртка"
+    },
+    {
+        "id": 10,
+        "url": "/assets/socks.jpg",
+        "english" : "socks",
+        "transcription": "[sɒks]",
+        "russian": "Носки"
+    },
+    {
+        "id": 11,
+        "url": "/assets/shirt.jpg",
+        "english" : "shirt",
+        "transcription": "[ʃɜːt]",
+        "russian": "Рубашка"
+    },
+    {
+        "id": 12,
+        "url": "/assets/trousers.jpg",
+        "english" : "trousers",
+        "transcription": "[ˈtraʊzəz]",
+        "russian": "Брюки"
+    }
+]
