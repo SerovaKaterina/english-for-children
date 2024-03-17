@@ -16,7 +16,7 @@ const Button = ({ onSelectCategory }) => {
   return (
     <div className={styles.button}>
       <button className={styles.button_btn} onClick={toggleDropdown}>
-        Выбрать категорию
+          Выберите категорию
       </button>
       {isOpen && (
         <div className={styles.dropdown_content}>
