@@ -1,8 +1,11 @@
 .links {
-  width: 400px;
   display: flex;
-  justify-content: space-around;
   list-style-type: none;
-  align-items: center;
-  margin-top: 20px;
+  justify-content: space-around;
+}
+.links1 {
+  font-size: xx-large;
+  text-decoration: none;
+  margin-top: 0;
+  padding-top: 0;
 }
