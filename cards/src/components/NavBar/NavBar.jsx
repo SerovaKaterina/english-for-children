@@ -1,13 +1,17 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
-import styles from './navbar.module.css'
+import styles from './navbar.module.css';
 
-function NavBar() {
+function NavBar({ onTableClick }) {
   return (
     <div className={styles.navbar}>
       <ul className={styles.links}>
         <li>
-          <Link to="/" className={styles.links1}>Table</Link>
+          {/* Вызываем функцию onTableClick при клике на ссылку "Table" */}
+          <Link to="/table" onClick={onTableClick} className={styles.links1}>
+            Table
+          </Link>
         </li>
         <li>
           <Link to="/cards" className={styles.links1}>Cards</Link>
