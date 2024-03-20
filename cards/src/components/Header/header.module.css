@@ -22,3 +22,16 @@
 body {
   background-image: url(../../images/5.png);
 }
+.start {
+  display: flex;
+  flex-direction: column;
+}
+.vector {
+  padding-top: 55%;
+}
+.logo {
+  font-weight: bolder;
+  padding-top: 10px;
+  padding-left: 30px;
+  font-size: larger;
+}

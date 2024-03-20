@@ -7,7 +7,10 @@ import imgVector from "../../images/Vector.png";
 function Header() {
     return (
         <div className= {styles.header}>
-            <img src={imgVector} alt="vector" />
+            <div className={styles.start}>
+            <div className={styles.logo}>LOGO</div>
+            <img src={imgVector} alt="vector" className={styles.vector}/>
+            </div>
             <div className={styles.header_name}><h1>ENGLISH EASY & SIMPLE</h1> </div>
             <div className={styles.header_img}>
             <img src={imgBoy} alt="boy" className={styles.img_boy} />
