@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import TransportCard from './TransportCard'; 
 import styles from './Carousel.module.css';
@@ -16,7 +15,8 @@ function Carousel({ items }) {
 
   return (
     <div className={styles.carousel}>
-      <button onClick={prevSlide}>Prev</button>
+      <button className={styles.prev}  onClick={prevSlide}>Prev
+      </button>
       {items.map((item, index) => (
         <div
           key={index}
@@ -30,7 +30,7 @@ function Carousel({ items }) {
           />
         </div>
       ))}
-      <button onClick={nextSlide}>Next</button>
+      <button className={styles.next} onClick={nextSlide}>next</button>
     </div>
   );
 }
