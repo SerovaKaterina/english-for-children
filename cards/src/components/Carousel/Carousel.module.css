@@ -1,6 +1,8 @@
 /* Carousel.module.css */
 .carousel {
   display: flex;
+  width: 70%;
+  margin: 0 auto;
 }
 
 .active {
@@ -15,4 +17,6 @@
 
 button {
   border: none;
+  background: none;
+  font-family: "Wellfleet", monospace;
 }

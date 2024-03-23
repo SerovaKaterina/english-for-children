@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
-import TransportCard from './TransportCard'; 
+import TransportCard from './TransportCard';
+import ClothesCard from './ClothesCard'; 
 import styles from './Carousel.module.css';
+import prevImg from '../.././images/pngegg.png'
+import nextImg from '../.././images/pngegg2.png'
 
-function Carousel({ items }) {
+function Carousel({ items, category }) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const nextSlide = () => {
@@ -15,22 +18,30 @@ function Carousel({ items }) {
 
   return (
     <div className={styles.carousel}>
-      <button className={styles.prev}  onClick={prevSlide}>Prev
-      </button>
+      <button className={styles.prev} onClick={prevSlide}><img src={prevImg} alt='prev'></img></button>
       {items.map((item, index) => (
         <div
           key={index}
           className={index === currentIndex ? styles.active : styles.inactive}
         >
-          <TransportCard
-            url={item.url}
-            english={item.english}
-            transcription={item.transcription}
-            russian={item.russian}
-          />
+          {category === 'Транспорт' ? (
+               <TransportCard
+               url={item.url}
+               english={item.english}
+               transcription={item.transcription}
+               russian={item.russian}
+             />
+          ) : (
+            <ClothesCard
+              url={item.url}
+              english={item.english}
+              transcription={item.transcription}
+              russian={item.russian}
+            />
+          )}
         </div>
       ))}
-      <button className={styles.next} onClick={nextSlide}>next</button>
+      <button className={styles.next} onClick={nextSlide}><img src={nextImg} alt='next'></img></button>
     </div>
   );
 }

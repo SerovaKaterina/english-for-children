@@ -1,10 +1,10 @@
 import React from "react";
 import styles from "./Card.module.css";
 
-const TransportCard = ({ url, english, transcription, russian }) => {
+const ClothesCard = ({ url, english, transcription, russian }) => {
   return (
     <div className={styles.card}>
-    <div className={styles.transportCard}>
+    <div className={styles.clothesCard}>
       <img src={url} alt={english} className={styles.image} />
       <h3 className={styles.name}>{english}</h3>
       <p className={styles.transcription}>{transcription}</p>
@@ -14,4 +14,4 @@ const TransportCard = ({ url, english, transcription, russian }) => {
   );
 };
 
-export default TransportCard;
+export default ClothesCard;

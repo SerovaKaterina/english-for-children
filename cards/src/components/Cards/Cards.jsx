@@ -10,44 +10,46 @@ const Cards = ({ onSelectCategory }) => {
 
   const handleCategoryClick = (category) => {
     onSelectCategory(category);
-    toggleDropdown();
+    setIsOpen(false); // Закрываем выпадающее меню после выбора категории
   };
 
-return (
-  <div className={styles.button}>
-    <button className={styles.button_btn} onClick={toggleDropdown}>
-        Выберите категорию
-    </button>
-    {isOpen && (
-      <div className={styles.dropdown_content}>
-        <button
-          className={styles.dropdown_btn}
-          onClick={() => handleCategoryClick("Транспорт")}
-        >
-          Транспорт
+  return (
+    <div className={styles.button}>
+      {isOpen ? null : (
+        <button className={styles.button_btn} onClick={toggleDropdown}>
+          Categories
         </button>
-        <button
-          className={styles.dropdown_btn}
-          onClick={() => handleCategoryClick("Одежда")}
-        >
-          Одежда
-        </button>
-        <button
-          className={styles.dropdown_btn}
-          onClick={() => handleCategoryClick("Игрушки")}
-        >
-          Игрушки
-        </button>
-        <button
-          className={styles.dropdown_btn}
-          onClick={() => handleCategoryClick("Семья")}
-        >
-          Семья
-        </button>
-      </div>
-    )}
-  </div>
-);
+      )}
+      {isOpen && (
+        <div className={styles.dropdown_content}>
+          <button
+            className={styles.dropdown_btn}
+            onClick={() => handleCategoryClick("Транспорт")}
+          >
+            Transport
+          </button>
+          <button
+            className={styles.dropdown_btn}
+            onClick={() => handleCategoryClick("Одежда")}
+          >
+            Clothes
+          </button>
+          <button
+            className={styles.dropdown_btn}
+            onClick={() => handleCategoryClick(" Игрушки")}
+          >
+            Toys
+          </button>
+          <button
+            className={styles.dropdown_btn}
+            onClick={() => handleCategoryClick("Семья")}
+          >
+            Family
+          </button>
+        </div>
+      )}
+    </div>
+  );
 };
 
 export default Cards;

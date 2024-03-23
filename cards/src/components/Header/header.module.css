@@ -1,6 +1,8 @@
 .header {
-  background-color: rgb(237, 230, 41);
   display: flex;
+  background-image: url(../../images/1.png);
+  background-repeat: no-repeat;
+  border: 15px solid rgb(237, 230, 41);
 }
 .img_boy {
   width: 60%;
@@ -10,12 +12,11 @@
 }
 .img_girl {
   width: 40%;
-  background-image: url(../../images/1.png);
   background-repeat: no-repeat;
 }
 .header_name {
-  padding-top: 20px;
-  background-image: url(../../images/1.png);
+  padding-top: 60px;
+  color: rgb(10, 64, 134);
   background-repeat: no-repeat;
   background-position-x: right;
 }

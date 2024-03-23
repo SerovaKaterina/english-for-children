@@ -1,6 +1,8 @@
 .app {
   max-width: 800px;
   margin: 0 auto;
+  font-family: "Wellfleet", monospace;
+  margin-bottom: 5%;
 }
 .transport-carousel {
   display: flex;
