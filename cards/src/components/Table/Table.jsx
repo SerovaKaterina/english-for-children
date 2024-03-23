@@ -4,12 +4,10 @@ import transportData from '../../data/transport.json';
 import clothesData from'../../data/сlothes.json';
 
 function Table({ showTable }) {
-  // Ваши данные для отображения в таблице
   const data = [...transportData, ...clothesData ];
 
   return (
     <div className={styles.tableContainer}>
-      {/* Отображаем содержание таблицы, если showTable === true */}
       {showTable && (
         <table className={styles.table}>
           <thead>

@@ -8,7 +8,6 @@ function NavBar({ onTableClick }) {
     <div className={styles.navbar}>
       <ul className={styles.links}>
         <li>
-          {/* Вызываем функцию onTableClick при клике на ссылку "Table" */}
           <Link to="/table" onClick={onTableClick} className={styles.links1}>
             Table
           </Link>
