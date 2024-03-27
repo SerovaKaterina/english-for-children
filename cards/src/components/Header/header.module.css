@@ -1,8 +1,9 @@
 .header {
+  width: 800px;
   display: flex;
   background-image: url(../../images/1.png);
   background-repeat: no-repeat;
-  border: 15px solid rgb(237, 230, 41);
+  border: 10px solid rgb(10, 64, 134);
 }
 .img_boy {
   width: 60%;
@@ -12,12 +13,18 @@
 }
 .img_girl {
   width: 40%;
-  background-repeat: no-repeat;
 }
 .header_name {
-  padding-top: 60px;
+  padding-top: 70px;
+  padding-left: 20px;
   color: rgb(10, 64, 134);
   background-repeat: no-repeat;
+  background-position-x: right;
+}
+.header_img {
+  background-repeat: no-repeat;
+  background-image: url(../../images/3.png);
+  background-position: right top;
   background-position-x: right;
 }
 body {
@@ -32,7 +39,11 @@ body {
 }
 .logo {
   font-weight: bolder;
-  padding-top: 10px;
-  padding-left: 30px;
+  border: 2px solid gold;
+  margin-left: 20px;
   font-size: larger;
+  width: 50px;
+  text-align: center;
+  margin-top: 5px;
+  color: gold;
 }

@@ -8,7 +8,7 @@ function Header() {
     return (
         <div className= {styles.header}>
             <div className={styles.start}>
-            <div className={styles.logo}>LOGO</div>
+            <div className={styles.logo}>A B C</div>
             <img src={imgVector} alt="vector" className={styles.vector}/>
             </div>
             <div className={styles.header_name}><h1>ENGLISH EASY & SIMPLE</h1> </div>

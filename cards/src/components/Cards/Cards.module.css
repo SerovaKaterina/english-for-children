@@ -6,13 +6,13 @@
   height: 50px;
   margin-top: 20px;
   color: rgb(242, 26, 26);
-  background: none;
+  background: gold;
   border: 5px solid rgb(45, 138, 189);
   font-size: larger;
   font-weight: bold;
 }
 .button_btn:hover {
-  box-shadow: inset 400px 0 0 0 rgb(237, 230, 41);
+  box-shadow: inset 400px 0 0 0 white;
 }
 .dropdown_content {
   display: flex;
@@ -42,7 +42,7 @@
   align-items: center;
   justify-content: center;
   font-size: large;
-  background-color: coral;
+  background-color: gold;
   width: 200px;
   height: 40px;
   -webkit-clip-path: polygon(0 0, 100% 0, 85% 100%, 15% 100%);
