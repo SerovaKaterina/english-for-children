@@ -60,5 +60,6 @@
 }
 
 .dropdown_btn:hover {
-  background-color: rgb(227, 250, 19);
+  background-color: rgb(73, 190, 206);
+  border: 3px solid rgb(223, 26, 26);
 }
