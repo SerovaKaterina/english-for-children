@@ -8,6 +8,7 @@ import nextImg from '../.././images/pngegg2.png'
 function Carousel({ items, category }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [pressed, setPressed] = useState(Array(items.length).fill(false));
+  const [wordsLearned, setWordsLearned] = useState(0); // Общее количество изученных слов
 
   const nextSlide = () => {
     setCurrentIndex((prevIndex) => (prevIndex === items.length - 1 ? 0 : prevIndex + 1));
@@ -23,6 +24,7 @@ function Carousel({ items, category }) {
       newPressed[index] = !newPressed[index];
       return newPressed;
     });
+    setWordsLearned((prevWordsLearned) => prevWordsLearned + 1); // Увеличиваем общий счетчик
   };
 
   return (
@@ -42,7 +44,7 @@ function Carousel({ items, category }) {
       <button className={styles.translate} onClick={() => handleClick(index)}>Перевести</button>
     )}
     pressed={pressed[index]}
-    handleClick={() => handleClick(index)}
+    wordsLearned={wordsLearned} // Передаем общий счетчик в компонент
   />
 ) : (
   <ClothesCard
@@ -52,11 +54,13 @@ function Carousel({ items, category }) {
     russian={pressed[index] ? item.russian : (
       <button className={styles.translate} onClick={() => handleClick(index)}>Посмотреть перевод</button>
     )}
+    wordsLearned={wordsLearned} // Передаем общий счетчик в компонент
   />
 )}
         </div>
       ))}
       <button className={styles.next} onClick={nextSlide}><img src={nextImg} alt='next' /></button>
+      <p>Words Learned: {wordsLearned}</p> {/* Отображаем общее количество изученных слов */}
     </div>
   );
 }
