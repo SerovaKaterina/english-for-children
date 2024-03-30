@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import TransportCard from './TransportCard';
 import ClothesCard from './ClothesCard'; 
 import styles from './Carousel.module.css';
@@ -9,6 +9,13 @@ function Carousel({ items, category }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [pressed, setPressed] = useState(Array(items.length).fill(false));
   const [wordsLearned, setWordsLearned] = useState(0); // Общее количество изученных слов
+  const buttonRefs = useRef([]);
+
+  useEffect(() => {
+    if (buttonRefs.current[currentIndex]) {
+      buttonRefs.current[currentIndex].focus();
+    }
+  }, [currentIndex]);
 
   const nextSlide = () => {
     setCurrentIndex((prevIndex) => (prevIndex === items.length - 1 ? 0 : prevIndex + 1));
@@ -35,28 +42,40 @@ function Carousel({ items, category }) {
           key={index}
           className={index === currentIndex ? styles.active : styles.inactive}
         >
-         {category === 'Транспорт' ? (
-  <TransportCard
-    url={item.url}
-    english={item.english}
-    transcription={item.transcription}
-    russian={pressed[index] ? item.russian : (
-      <button className={styles.translate} onClick={() => handleClick(index)}>Перевести</button>
-    )}
-    pressed={pressed[index]}
-    wordsLearned={wordsLearned} // Передаем общий счетчик в компонент
-  />
-) : (
-  <ClothesCard
-    url={item.url}
-    english={item.english}
-    transcription={item.transcription}
-    russian={pressed[index] ? item.russian : (
-      <button className={styles.translate} onClick={() => handleClick(index)}>Посмотреть перевод</button>
-    )}
-    wordsLearned={wordsLearned} // Передаем общий счетчик в компонент
-  />
-)}
+          {category === 'Транспорт' ? (
+            <TransportCard
+              url={item.url}
+              english={item.english}
+              transcription={item.transcription}
+              russian={pressed[index] ? item.russian : (
+                <button
+                  ref={el => buttonRefs.current[index] = el}
+                  className={styles.translate}
+                  onClick={() => handleClick(index)}
+                >
+                  Перевести
+                </button>
+              )}
+              pressed={pressed[index]}
+              wordsLearned={wordsLearned} // Передаем общий счетчик в компонент
+            />
+          ) : (
+            <ClothesCard
+              url={item.url}
+              english={item.english}
+              transcription={item.transcription}
+              russian={pressed[index] ? item.russian : (
+                <button
+                  ref={el => buttonRefs.current[index] = el}
+                  className={styles.translate}
+                  onClick={() => handleClick(index)}
+                >
+                  Посмотреть перевод
+                </button>
+              )}
+              wordsLearned={wordsLearned} // Передаем общий счетчик в компонент
+            />
+          )}
         </div>
       ))}
       <button className={styles.next} onClick={nextSlide}><img src={nextImg} alt='next' /></button>

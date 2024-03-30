@@ -20,4 +20,4 @@ const TransportCard = ({ url, english, transcription, russian, handleClick, word
   );
 };
 
-export default TransportCard;
+export default TransportCard; 
