@@ -37,7 +37,7 @@ function Carousel({ items, category }) {
 
   return (
     <div className={styles.carousel}>
-      <button className={styles.prev} onClick={prevSlide}><img src={prevImg} alt='prev' /></button>
+      <button onClick={prevSlide}><img src={prevImg} alt='prev' /></button>
       {items.map((item, index) => (
         <div
           key={index}
@@ -79,7 +79,7 @@ function Carousel({ items, category }) {
           )}
         </div>
       ))}
-      <button className={styles.next} onClick={nextSlide}><img src={nextImg} alt='next' /></button>
+      <button onClick={nextSlide}><img src={nextImg} alt='next' /></button>
       <p>Words Learned: {wordsLearned}</p> {/* отображаем общее количество изученных слов */}
     </div>
   );

@@ -35,3 +35,30 @@ table th,
 .table tbody tr:hover {
   background-color: #ddd;
 }
+.button {
+  font-family: "Wellfleet", monospace;
+  font-size: 14px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.button:hover {
+  background-color: #ddd;
+}
+
+/* Стиль для кнопки "Редактировать" */
+.edit {
+  border: 2px solid rgb(45, 138, 189);
+}
+
+/* Стиль для кнопок "Сохранить" и "Отмена" */
+.save {
+  background-color: #b8f5c6;
+  margin-right: 5px;
+}
+.cancel {
+  background-color: #f5b09b;
+  margin-right: 5px;
+}

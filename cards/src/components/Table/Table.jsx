@@ -85,11 +85,11 @@ function Table({ showTable }) {
                 <td>
                   {editing[item.id] ? (
                     <div className={styles.change}>
-                      <button onClick={() => handleSaveChanges(item.id)}>Сохранить</button>
-                      <button onClick={() => handleCancelEdit(item.id)}>Отмена</button>
+                      <button className ={`${styles.save} ${styles.button}`} onClick={() => handleSaveChanges(item.id)}>Сохранить</button>
+                      <button className={`${styles.cancel} ${styles.button}`} onClick={() => handleCancelEdit(item.id)}>Отмена</button>
                     </div>
                   ) : (
-                    <button onClick={() => setEditing(prevState => ({ ...prevState, [item.id]: true }))}>Редактировать</button>
+                    <button className = {`${styles.edit} ${styles.button}`}onClick={() => setEditing(prevState => ({ ...prevState, [item.id]: true }))}>Редактировать</button>
                   )}
                 </td>
               </tr>

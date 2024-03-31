@@ -1,11 +1,11 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import styles from './navbar.module.css';
+import styles from './Navbar.module.css';
 
 function NavBar({ onTableClick }) {
   return (
-    <div className={styles.navbar}>
+    <div>
       <ul className={styles.links}>
         {/* ссылка на таблицу */}
         <li>

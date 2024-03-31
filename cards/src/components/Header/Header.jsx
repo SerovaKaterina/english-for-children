@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./header.module.css";
+import styles from "./Header.module.css";
 import imgBoy from "../../images/boy.png";
 import imgGirl from "../../images/girl.png";
 import imgVector from "../../images/Vector.png";
