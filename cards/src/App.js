@@ -6,8 +6,8 @@ import Cards from './components/Cards/Cards';
 import Table from './components/Table/Table';
 import Carousel from './components/Carousel/Carousel';
 import styles from './App.module.css';
-import transportData from './data/transport.json'; // Импорт данных о транспорте
-import clothesData from './data/сlothes.json'; // Импорт данных о транспорте
+import transportData from './data/transport.json';
+import clothesData from './data/сlothes.json'; 
 
 function App() {
   const [selectedCategory, setSelectedCategory] = useState(null);
@@ -34,6 +34,7 @@ function App() {
           <Route path="/carousel/transport" element={<Carousel items={transportData} />} />
           <Route path="/carousel/clothes" element={<Carousel items={clothesData} />} />
         </Routes>
+        {/* показываем карусель, в зависимости от выбранной категори */}
         {selectedCategory === 'Транспорт' && <Carousel items={transportData} />}
         {selectedCategory === 'Одежда' && <Carousel items={clothesData} />}
       </div>

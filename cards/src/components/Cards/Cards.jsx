@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./Cards.module.css";
 
 function Cards({ onSelectCategory }) {
+  //обработчик клика по категории
   const handleCategoryClick = (category) => {
     onSelectCategory(category);
   };
