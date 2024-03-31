@@ -47,13 +47,9 @@ table th,
 .button:hover {
   background-color: #ddd;
 }
-
-/* Стиль для кнопки "Редактировать" */
 .edit {
   border: 2px solid rgb(45, 138, 189);
 }
-
-/* Стиль для кнопок "Сохранить" и "Отмена" */
 .save {
   background-color: #b8f5c6;
   margin-right: 5px;
