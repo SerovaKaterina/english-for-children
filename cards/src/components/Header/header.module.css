@@ -3,7 +3,6 @@
   display: flex;
   background-image: url(../../images/1.png);
   background-repeat: no-repeat;
-  border: 10px solid rgb(45, 138, 189);
 }
 .img_boy {
   width: 60%;

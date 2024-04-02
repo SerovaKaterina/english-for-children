@@ -17,10 +17,9 @@
 .dropdown_content {
   display: flex;
   max-width: 800px;
-  justify-content: center;
-  position: relative;
+  margin-left: 15px;
   list-style: none;
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.75));
+  filter: drop-shadow(0 5px 5px rgb(35, 112, 153));
 }
 .dropdown_content:nth-of-type(1) {
   z-index: 1;
@@ -59,7 +58,8 @@
   z-index: 1;
 }
 
-.dropdown_btn:hover {
+.dropdown_btn:hover,
+.selected {
   background-color: rgb(73, 190, 206);
   border: 3px solid rgb(223, 26, 26);
 }
