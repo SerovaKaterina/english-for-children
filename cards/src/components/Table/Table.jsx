@@ -28,9 +28,6 @@ function Table({ showTable }) {
   // Обработчик сохранения изменений
   const handleSaveChanges = (id) => {
     setEditing(prevState => ({ ...prevState, [id]: false }));
-    // Обновить данные после сохранения изменений
-    // Например, можно отправить измененные данные на сервер
-    console.log("Сохраненные изменения:", editedData[id]);
   };
 
   return (
