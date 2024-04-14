@@ -1,35 +1,36 @@
 import React, { useState } from 'react';
 import styles from './Table.module.css';
 import transportData from '../../data/transport.json';
-import clothesData from'../../data/сlothes.json';
+import clothesData from '../../data/сlothes.json';
 
 function Table({ showTable }) {
   const [editing, setEditing] = useState({});
-  const [editedData, setEditedData] = useState([]);
+  const [editedData, setEditedData] = useState({});
   
   const data = [...transportData, ...clothesData];
 
   // Обработчик изменения значения поля
   const handleFieldChange = (id, field, value) => {
-    const newData = editedData.map(item => {
-      if (item.id === id) {
-        return { ...item, [field]: value };
-      }
-      return item;
-    });
-    setEditedData(newData);
+    setEditedData(prevState => ({ ...prevState, [id]: { ...prevState[id], [field]: value } }));
   };
 
   // Обработчик отмены редактирования
   const handleCancelEdit = (id) => {
     setEditing(prevState => ({ ...prevState, [id]: false }));
-    setEditedData(prevData => prevData.filter(item => item.id !== id));
+    // Очистить измененные данные при отмене редактирования
+    setEditedData(prevState => {
+      const newState = { ...prevState };
+      delete newState[id];
+      return newState;
+    });
   };
 
   // Обработчик сохранения изменений
   const handleSaveChanges = (id) => {
     setEditing(prevState => ({ ...prevState, [id]: false }));
-    setEditedData(prevData => prevData.filter(item => item.id !== id));
+    // Обновить данные после сохранения изменений
+    // Например, можно отправить измененные данные на сервер
+    console.log("Сохраненные изменения:", editedData[id]);
   };
 
   return (
@@ -53,7 +54,7 @@ function Table({ showTable }) {
                   {editing[item.id] ? (
                     <input
                       type="text"
-                      value={editedData.find(dataItem => dataItem.id === item.id)?.russian || item.russian}
+                      value={editedData[item.id]?.russian || item.russian}
                       onChange={(e) => handleFieldChange(item.id, 'russian', e.target.value)}
                     />
                   ) : (
@@ -64,7 +65,7 @@ function Table({ showTable }) {
                   {editing[item.id] ? (
                     <input
                       type="text"
-                      value={editedData.find(dataItem => dataItem.id === item.id)?.transcription || item.transcription}
+                      value={editedData[item.id]?.transcription || item.transcription}
                       onChange={(e) => handleFieldChange(item.id, 'transcription', e.target.value)}
                     />
                   ) : (
@@ -75,7 +76,7 @@ function Table({ showTable }) {
                   {editing[item.id] ? (
                     <input
                       type="text"
-                      value={editedData.find(dataItem => dataItem.id === item.id)?.english || item.english}
+                      value={editedData[item.id]?.english || item.english}
                       onChange={(e) => handleFieldChange(item.id, 'english', e.target.value)}
                     />
                   ) : (
@@ -85,11 +86,11 @@ function Table({ showTable }) {
                 <td>
                   {editing[item.id] ? (
                     <div className={styles.change}>
-                      <button className ={`${styles.save} ${styles.button}`} onClick={() => handleSaveChanges(item.id)}>Сохранить</button>
-                      <button className={`${styles.cancel} ${styles.button}`} onClick={() => handleCancelEdit(item.id)}>Отмена</button>
+                      <button className={styles.save} onClick={() => handleSaveChanges(item.id)}>Сохранить</button>
+                      <button className={styles.cancel} onClick={() => handleCancelEdit(item.id)}>Отмена</button>
                     </div>
                   ) : (
-                    <button className = {`${styles.edit} ${styles.button}`}onClick={() => setEditing(prevState => ({ ...prevState, [item.id]: true }))}>Редактировать</button>
+                    <button className={styles.edit} onClick={() => setEditing(prevState => ({ ...prevState, [item.id]: true }))}>Редактировать</button>
                   )}
                 </td>
               </tr>
