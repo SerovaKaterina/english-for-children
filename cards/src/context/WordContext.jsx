@@ -39,7 +39,7 @@ transcription: updatedWord.transcription
 
 try {
 const response = await fetch(
-`${API_ALL_WORDS}/$370274675/update`,
+`${API_ALL_WORDS}/${id}/update`,
 {
 method: "POST",
 headers: {
@@ -65,7 +65,7 @@ console.error("Error updating word:", error);
 const deleteWord = async (id) => {
 try {
 const response = await fetch(
-`${API_ALL_WORDS}/$370274675/delete`,
+`${API_ALL_WORDS}/${id}/delete`,
 {
 method: "POST",
 }
@@ -90,3 +90,4 @@ return (
 </WordContext.Provider>
 );
 };
+export {WordContext, WordProvider};
