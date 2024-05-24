@@ -25,7 +25,7 @@ function App() {
 
   return (
     <Router>
-      <WordProvider> {/* Обернем приложение провайдером контекста */}
+      <WordProvider>
         <div className={styles.app}>
           <Header />
           <NavBar onTableClick={handleTableClick} />
