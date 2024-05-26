@@ -11,6 +11,7 @@ class WordsStore {
         makeAutoObservable(this);
     }
 
+    // Метод для загрузки слов
     fetchWords = async () => {
         this.loading = true;
         try {
@@ -27,6 +28,7 @@ class WordsStore {
         }
     };
 
+    // Метод для добавления слова
     addWord = async (value) => {
         try {
             const response = await fetch(AllWords, {
@@ -44,12 +46,13 @@ class WordsStore {
             if (!response.ok) {
                 throw new Error('Failed to add word');
             }
-            await this.fetchWords(); // Reload words after adding a new one
+            await this.fetchWords(); // Перезагрузка слов после добавления нового
         } catch (error) {
             this.error = error.message;
         }
     };
 
+    // Метод для обновления слова
     updateWord = async (updatedWord) => {
         try {
             const response = await fetch(`${AllWords}/${updatedWord.id}`, {
@@ -62,12 +65,13 @@ class WordsStore {
             if (!response.ok) {
                 throw new Error('Failed to update word');
             }
-            await this.fetchWords(); // Reload words after updating
+            await this.fetchWords(); // Перезагрузка слов после обновления
         } catch (error) {
             this.error = error.message;
         }
     };
 
+    // Метод для удаления слова
     deleteWord = async (id) => {
         try {
             const response = await fetch(`${AllWords}/${id}`, {

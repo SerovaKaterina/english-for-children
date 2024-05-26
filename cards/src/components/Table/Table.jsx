@@ -3,26 +3,32 @@ import { observer, inject } from 'mobx-react';
 import styles from './Table.module.css';
 
 function Table({ wordsStore }) {
+  // Получаем необходимые данные и методы из хранилища слов
   const { words, fetchWords, addWord, updateWord, deleteWord, loading, error } = wordsStore;
+  
+  // Состояния для редактирования, предыдущих данных и нового слова
   const [editingId, setEditingId] = useState(null);
   const [previousData, setPreviousData] = useState(null);
   const [newWord, setNewWord] = useState({ russian: '', transcription: '', english: '' });
 
+  // Обработчик изменения значения поля
   const handleFieldChange = (id, field, value) => {
-    updateWord({ id, [field]: value });
+    updateWord({ id, [field]: value }); // Обновляем слово в хранилище
   };
 
+  // Обработчик отмены редактирования
   const handleCancelEdit = () => {
     if (previousData !== null) {
-      fetchWords(previousData);
+      fetchWords(previousData); // Восстанавливаем предыдущие данные
       setPreviousData(null);
     }
     setEditingId(null);
   };
 
+  // Обработчик сохранения изменений
   const handleSaveChanges = async (item) => {
     try {
-      await updateWord(item);
+      await updateWord(item); // Обновляем слово на сервере
       setEditingId(null);
       setPreviousData(null);
     } catch (error) {
@@ -30,27 +36,32 @@ function Table({ wordsStore }) {
     }
   };
 
+  // Обработчик добавления нового слова
   const handleAddWord = async () => {
     try {
-      await addWord(newWord);
+      await addWord(newWord); // Добавляем новое слово на сервере
       setNewWord({ russian: '', transcription: '', english: '' });
     } catch (error) {
       console.error('Failed to add word:', error);
     }
   };
 
+  // Функция для проверки, содержит ли объект пустые значения
   const hasEmptyFields = (obj) => {
     return Object.values(obj).some(value => value === '');
   };
 
+  // Если данные загружаются, показываем сообщение о загрузке
   if (loading) {
     return <div>Loading...</div>;
   }
 
+  // Если произошла ошибка, показываем сообщение об ошибке
   if (error) {
     return <div>Error: {error}</div>;
   }
 
+  // Отображаем таблицу
   return (
     <div className={styles.tableContainer}>
       <table className={styles.table}>
